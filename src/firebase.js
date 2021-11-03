@@ -1,17 +1,17 @@
-import firebase from "firebase/app";
-import "firebase/storage";
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAl2I9jmDBeecV3RqoRDn3KuP9vHY2EFlY",
-  authDomain: "fir-react-storage-2b949.firebaseapp.com",
-  projectId: "fir-react-storage-2b949",
-  storageBucket: "fir-react-storage-2b949.appspot.com",
-  messagingSenderId: "1007819731980",
-  appId: "1:1007819731980:web:3782acf1f70af6f1ce2a29",
+  apiKey: "AIzaSyCzGKXxJ8IUpYRa5xqQkWZOmUChSAlVKMo",
+  authDomain: "fir-auth-react-e8399.firebaseapp.com",
+  projectId: "fir-auth-react-e8399",
+  storageBucket: "fir-auth-react-e8399.appspot.com",
+  messagingSenderId: "962605851630",
+  appId: "1:962605851630:web:299f3aab1c08fb9fa9e4ff",
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const storage = firebase.storage();
+const storage = getStorage(app);
 
-export { storage, firebase as default };
+export { storage, app };
