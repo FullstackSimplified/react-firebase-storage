@@ -6,7 +6,7 @@ function App() {
   const [progress, setProgress] = useState(0);
   const formHandler = (e) => {
     e.preventDefault();
-    const file = e.target[0].files[0];
+    const file = e.target.files[0];
     uploadFiles(file);
   };
 
