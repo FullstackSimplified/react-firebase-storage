@@ -5,12 +5,17 @@ function App() {
   const [progress, setProgress] = useState(0);
   const formHandler = (e) => {
     e.preventDefault();
-    const file = e.target[0].files[0];
-    uploadFiles(file);
+   const files = e.target.files;
+    const multiFilesUploadPromise=files.map((file)=>{
+      uploadFiles(file);
+    });
+    Promise.all(multiFilesUploadPromise); 
+   
   };
 
   const uploadFiles = (file) => {
     //
+    return new Promise((res,rej)=>{
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
@@ -32,6 +37,7 @@ function App() {
           });
       }
     );
+    }
   };
 
   return (
