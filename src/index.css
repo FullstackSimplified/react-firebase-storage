@@ -20,3 +20,15 @@ code {
   border: 1px solid gray;
   margin-right: 12px;
 }
+
+.image-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-wrapper {
+  margin: 12px;
+  width: 300px;
+  height: 200px;
+}
