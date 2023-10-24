@@ -10,12 +10,12 @@ function App() {
   };
 
   const uploadFiles = (file) => {
-    //
+  //Image upload only
+  if (file.type.startsWith("image/")) {
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        //
         const prog = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
@@ -32,7 +32,11 @@ function App() {
           });
       }
     );
-  };
+  } else {
+    console.log("Invalid file type. Only image files are allowed.");
+  }
+};
+
 
   return (
     <div className="App">
