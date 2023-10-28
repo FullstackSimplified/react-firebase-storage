@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={formHandler}>
-        <input type="file" className="input" />
+        <input type="file" className="input" accept="image/*" />
         <button type="submit">Upload</button>
       </form>
       <hr />
